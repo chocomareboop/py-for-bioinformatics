@@ -1,7 +1,7 @@
 import collections
+from os import replace
+from Sequences import *
 
-
-Neucleotides = ['A', 'C', 'G', 'T']
 
 def ValidateSequence(dna_sequence):   #input needs to be a string
 
@@ -18,4 +18,9 @@ def CountNucFrequency(sequence):
     # return tmpFreqDict
     return dict(collections.Counter(sequence))
     
- 
+def Transcription(seq):          #replacing T with U in the DNA sequence to get RNA sequence
+   return seq.replace("T", "U")
+
+def ReverseComplement(seq):      
+    '''returning the reverse complement of the DNA sequence'''
+    return ''.join([ReverseNeucleotides[i] for i in seq])[::-1]
